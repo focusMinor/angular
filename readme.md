@@ -2,7 +2,7 @@
 
 ```bash
    `
-      ng new --styles scss --skip-tests --routing --directory ./
+      ng new --style scss --skip-tests --routing --directory ./
    `
 ```
 
@@ -15,6 +15,14 @@
             "src/assets/scss"
          ]
       },
+   `
+```
+
+# tsconfig.json: compilerOptions
+
+```bash
+   `
+      "allowJs": true
    `
 ```
 

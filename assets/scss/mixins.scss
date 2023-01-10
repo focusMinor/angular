@@ -1,0 +1,42 @@
+@function rem($px) {
+   @return math.div($px, 16) + rem;
+}
+
+@function em($px, $current: 16) {
+   @return math.div($px, $current) + em;
+}
+
+@function percent($px, $from) {
+   @return math.div($px, $from) * 100%;
+}
+
+@mixin hide($line-heght, $line-clamp) {
+   line-height: rem($line-heght);
+   height: rem($line-heght * $line-clamp);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: $line-clamp;
+   -webkit-box-orient: vertical;
+}
+
+@mixin fluid($property, $max, $min) {
+   $k: fixed(math.div(($max - $min), ($maxWidth - $minWidth)));
+   $b: fixed(math.div($min - $k * $minWidth, 16)) + rem;
+
+   #{$property}: calc(#{$k * 100vw} + #{$b});
+   @media (min-width: em(1920)) {
+      #{$property}: rem($max);
+   }
+}
+
+@function fixed($float, $digits: 4) {
+   @return math.div(round($float * pow(10, $digits)), pow(10, $digits));
+}
+
+@function pow($base, $exponents, $raised: 1) {
+   @for $i from 1 through $exponents {
+      $raised: $raised * $base;
+   }
+   @return $raised;
+}

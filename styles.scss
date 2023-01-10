@@ -5,8 +5,8 @@
 $fontFamily: "";
 $fontSize: rem(16);
 
-@import "assets/scss/reset";
-// @import "assets/scss/icons";
+@import "reset";
+// @import "icons";
 
 .wrapper {
    min-height: 100%;
@@ -29,3 +29,6 @@ $fontSize: rem(16);
    padding: 0 rem(math.div($containerPadding, 2));
 }
 */
+
+@import "common/common";
+@import "custom/custom";
