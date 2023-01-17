@@ -10,6 +10,17 @@
    @return math.div($px, $from) * 100%;
 }
 
+@function fixed($float, $digits: 4) {
+   @return math.div(round($float * pow(10, $digits)), pow(10, $digits));
+}
+
+@function pow($base, $exponents, $raised: 1) {
+   @for $i from 1 through $exponents {
+      $raised: $raised * $base;
+   }
+   @return $raised;
+}
+
 @mixin hide($line-heght, $line-clamp) {
    line-height: rem($line-heght);
    height: rem($line-heght * $line-clamp);
@@ -20,7 +31,7 @@
    -webkit-box-orient: vertical;
 }
 
-@mixin fluid($property, $max, $min) {
+@mixin fluid($property, $max, $min, $maxWidth: 1920, $minWidth: 320) {
    $k: fixed(math.div(($max - $min), ($maxWidth - $minWidth)));
    $b: fixed(math.div($min - $k * $minWidth, 16)) + rem;
 
@@ -28,15 +39,4 @@
    @media (min-width: em(1920)) {
       #{$property}: rem($max);
    }
-}
-
-@function fixed($float, $digits: 4) {
-   @return math.div(round($float * pow(10, $digits)), pow(10, $digits));
-}
-
-@function pow($base, $exponents, $raised: 1) {
-   @for $i from 1 through $exponents {
-      $raised: $raised * $base;
-   }
-   @return $raised;
 }

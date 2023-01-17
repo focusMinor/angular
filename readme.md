@@ -2,7 +2,7 @@
 
 ```bash
    `
-      ng new --style scss --skip-tests --routing --directory ./
+      ng new --style scss --routing --directory ./
    `
 ```
 
@@ -24,38 +24,4 @@
    `
       "allowJs": true
    `
-```
-
-# svgtofont
-
-```bash
-   `
-      "svgtofont": {
-         "fontName": "icm",
-         "website": false,
-         "outSVGReact": false,
-         "outSVGPath": false,
-         "generateInfoData": false,
-         "css": {
-            "include": "\\.(scss)$",
-            "output": "./src/assets/scss",
-            "fileName": "icons",
-            "cssPath": "../fonts/"
-         }
-      }
-   `
-```
-
-# packages:
-
-```bash
-	`npm i -D svgo svgtofont`
-```
-
-# scripts:
-
-```bash
-	`
-		"svgicons": "svgo -f ./src/assets/svgicons -o ./src/assets/svgicons && svgtofont --sources ./src/assets/svgicons --output ./src/assets/fonts",
-	`
 ```

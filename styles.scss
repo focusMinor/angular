@@ -6,7 +6,7 @@ $fontFamily: "";
 $fontSize: rem(16);
 
 @import "reset";
-// @import "icons";
+@import "common";
 
 .wrapper {
    min-height: 100%;
@@ -23,12 +23,11 @@ $fontSize: rem(16);
 
 /*
 [class*="__container"] {
-   max-width: rem($containerWidth);
+   max-width: rem(1370);
    box-sizing: content-box;
    margin: 0 auto;
-   padding: 0 rem(math.div($containerPadding, 2));
+
+   @include fluid("padding-left", 20, 10);
+   @include fluid("padding-right", 20, 10);
 }
 */
-
-@import "common/common";
-@import "custom/custom";
