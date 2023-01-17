@@ -2,7 +2,7 @@
 
 ```bash
    `
-      ng new --style scss --routing --directory ./
+      ng new --style scss --skip-tests --routing --directory ./
    `
 ```
 
@@ -23,13 +23,5 @@
 ```bash
    `
       "allowJs": true
-   `
-```
-
-# npm packages
-
-```bash
-   `
-      "gulp gulp-svg-sprite gulp-fonter-fix gulp-ttf2woff2"
    `
 ```
