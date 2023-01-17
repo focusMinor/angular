@@ -25,3 +25,11 @@
       "allowJs": true
    `
 ```
+
+# npm packages
+
+```bash
+   `
+      "gulp gulp-svg-sprite gulp-fonter-fix gulp-ttf2woff2"
+   `
+```

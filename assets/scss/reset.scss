@@ -19,7 +19,7 @@ a:active {
 html,
 body {
    height: 100%;
-   min-width: $minWidth + px;
+   min-width: 320px;
 }
 body {
    line-height: 1;
@@ -68,4 +68,11 @@ h5,
 h6 {
    font-weight: inherit;
    font-size: inherit;
+}
+
+svg {
+   fill: currentColor;
+   display: inline-block;
+   width: rem(20);
+   height: rem(20);
 }
